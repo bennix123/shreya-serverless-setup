@@ -11,7 +11,7 @@ const connectDB=require('./initializeDb');
 
 const app = express();
 
-//sample_commit
+sample_commit
 // Ensure database connection before processing requests
 const startServer = async () => {
 

@@ -11,8 +11,11 @@ const connectDB=require('./initializeDb');
 
 const app = express();
 
+//sample_commit
 // Ensure database connection before processing requests
 const startServer = async () => {
+
+  await connectDB();
 
   app.get("/", (req, res) => {
     return res.status(200).json({
@@ -23,15 +26,6 @@ const startServer = async () => {
   app.get("/hello", (req, res) => {
     return res.status(200).json({
       message: "Hello from path!",
-    });
-  });
-
-  app.get("/Initialize_db", async(req, res) => {
-
-    const dbResponse=await connectDB();
-    return res.status(200).json({
-      status:dbResponse.status,
-      message: dbResponse.message
     });
   });
 
